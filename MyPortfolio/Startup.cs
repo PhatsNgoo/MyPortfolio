@@ -26,8 +26,9 @@ namespace MyPortfolio
                 app.UseDeveloperExceptionPage();
             }
             
-            app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+            //app.UseStaticFiles();
+            //app.UseMvcWithDefaultRoute();
+            app.UseMvc();
         }
     }
 }

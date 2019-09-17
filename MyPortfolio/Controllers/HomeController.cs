@@ -11,7 +11,29 @@ namespace MyPortfolio.Controllers
     public class HomeController : Controller
     {
         // GET: /<controller>/
-        public IActionResult Index()
+        [Route("")]
+        [Route("/index")]
+        [Route("home/index")]
+        public ViewResult Index()
+        {
+            return View();
+        }
+        [Route("/contact")]
+        [Route("home/contact")]
+        public ViewResult Contact()
+        {
+            return View(); 
+        }
+        
+        [Route("/about")]
+        [Route("home/about")]
+        public ViewResult About()
+        {
+            return View();
+        }
+        [Route("/services")]
+        [Route("home/services")]
+        public ViewResult Services()
         {
             return View();
         }
