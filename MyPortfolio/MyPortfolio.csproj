@@ -8,6 +8,8 @@
   <ItemGroup>
     <Content Remove="Views\Home\about.cshtml" />
     <Content Remove="Views\Home\contact.cshtml" />
+    <Content Remove="Views\Home\portfolio-details.cshtml" />
+    <Content Remove="Views\Home\portfolio.cshtml" />
     <Content Remove="Views\Home\services.cshtml" />
   </ItemGroup>
 
@@ -25,6 +27,8 @@
   <ItemGroup>
     <None Include="Views\Home\About.cshtml" />
     <None Include="Views\Home\Contact.cshtml" />
+    <None Include="Views\Home\portfolio-details.cshtml" />
+    <None Include="Views\Home\portfolio.cshtml" />
     <None Include="Views\Home\Services.cshtml" />
   </ItemGroup>
 

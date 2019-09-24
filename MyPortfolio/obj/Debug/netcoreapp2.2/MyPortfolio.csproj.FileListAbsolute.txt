@@ -14,6 +14,7 @@ C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\MyPortfoli
 C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\MyPortfolio.TagHelpers.output.cache
 C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\MyPortfolio.RazorCoreGenerate.cache
 C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
 C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\MyPortfolio.RazorTargetAssemblyInfo.cache
 C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\MyPortfolio.RazorTargetAssemblyInfo.cs
 C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\MyPortfolio.Views.pdb
@@ -21,4 +22,3 @@ C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\MyPortfoli
 C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\MyPortfolio.pdb
 C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\MyPortfolio.csproj.CopyComplete
 C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\MyPortfolio.csprojAssemblyReference.cache
-C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
