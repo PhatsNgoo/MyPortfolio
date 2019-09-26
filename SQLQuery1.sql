@@ -1,7 +1,7 @@
-﻿--create Database [Blogging]
---go
---use [Blogging]
---go
+﻿create Database [Blogging]
+go
+use [Blogging]
+go
 create table [Blogger](
 	[BloggerID] int not null identity,
 	[BloggerName] nvarchar(50) not null,
@@ -17,3 +17,10 @@ create table [Post](
 	CONSTRAINT [PK_BLOGGER_ID] FOREIGN KEY ([BloggerID]) References [Blogger] ([BloggerID])  ON DELETE CASCADE
 );
 select* from Blogger
+
+create Database [Visitor]
+go
+use [Visitor]
+go
+alter table Visitors
+ADD PRIMARY KEY (VisitorEmail)

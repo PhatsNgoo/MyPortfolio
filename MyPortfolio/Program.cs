@@ -14,11 +14,15 @@ namespace MyPortfolio
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("web is starting line 17");
             CreateWebHostBuilder(args).Build().Run();
         }
-
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+            .ConfigureLogging(logging=> {
+                logging.ClearProviders();
+                logging.AddConsole();
+            })
+            .UseStartup<Startup>();
     }
 }
