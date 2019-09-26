@@ -14,7 +14,6 @@ namespace MyPortfolio
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("web is starting line 17");
             CreateWebHostBuilder(args).Build().Run();
         }
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
