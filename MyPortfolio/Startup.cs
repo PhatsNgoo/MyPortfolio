@@ -28,6 +28,9 @@ namespace MyPortfolio
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSingleton<DebugClass>(x=>
+                new DebugClass(x.GetRequiredService<ILogger<DebugClass>>())
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,8 +41,8 @@ namespace MyPortfolio
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
-            //app.UseMvcWithDefaultRoute();
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
+            //app.UseMvc();
         }
     }
 }

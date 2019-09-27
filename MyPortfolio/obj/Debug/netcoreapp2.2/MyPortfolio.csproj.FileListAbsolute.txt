@@ -22,5 +22,6 @@ C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\MyPortfoli
 C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\MyPortfolio.pdb
 C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\MyPortfolio.csproj.CopyComplete
 C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\MyPortfolio.csprojAssemblyReference.cache
-C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ContactLayout_cshtml.g.cshtml.cs
 C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_SubLayout.g.cshtml.cs
+C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ContactLayout.g.cshtml.cs
+C:\Users\ASUS\Desktop\MyPortfolio\MyPortfolio\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs

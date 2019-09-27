@@ -1,49 +1,19 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using System.Data.SqlClient;
-using Microsoft.Extensions.Logging.Debug;
-using Microsoft.Extensions.Logging;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MyPortfolio.Controllers
 {
-    public class HomeController : Controller
+    public class VisitorController:Controller
     {
-        private readonly ILogger _logger;
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ILogger<VisitorController> _logger;
+        public VisitorController(ILogger<VisitorController> logger)
         {
             _logger = logger;
-        }
-        // GET: /<controller>/
-        [Route("")]
-        [Route("/index")]
-        [Route("home/index")]
-        public ViewResult Index()
-        {
-            return View();
-        }
-        [Route("/contact")]
-        [Route("home/contact")]
-        public ViewResult Contact()
-        {
-            return View(); 
-        }
-        
-        [Route("/about")]
-        [Route("home/about")]
-        public ViewResult About()
-        {
-            return View();
-        }
-        [Route("/services")]
-        [Route("home/services")]
-        public ViewResult Services()
-        {
-            return View();
         }
         static string GetConnectionString()
         {
@@ -52,6 +22,28 @@ namespace MyPortfolio.Controllers
             return "Data Source=PHATSNGOO-PC;User ID=sa;Password=Uzur3u2w;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         }
         public void SaveVisitorEmail(string email)
+        {
+            _logger.LogError("function called");
+            string connString = GetConnectionString();
+            SqlConnection myConn = new SqlConnection(connString);
+            try
+            {
+                _logger.LogError("dsql connecting");
+                myConn.Open();
+                string sqlCmd = @"use [Visitor] Insert into Visitors(VisitorEmail) values ('"+email+"')";
+                SqlCommand execCmd = new SqlCommand(sqlCmd, myConn);
+
+                //execCmd.ExecuteScalar();
+                myConn.Close();
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("db connected fail");
+                _logger.LogError(e.ToString());
+            }
+        }
+        [HttpPost]
+        public IActionResult Index(string email)
         {
             _logger.LogError("function called");
             string connString = GetConnectionString();
@@ -71,27 +63,7 @@ namespace MyPortfolio.Controllers
                 _logger.LogError("db connected fail");
                 _logger.LogError(e.ToString());
             }
-        }
-        public void SaveVisitorEmail()
-        {
-            _logger.LogError("function called");
-            string connString = GetConnectionString();
-            SqlConnection myConn = new SqlConnection(connString);
-            try
-            {
-                _logger.LogError("dsql connecting");
-                myConn.Open();
-                string sqlCmd = @"use [Visitor] Insert into Visitors(VisitorEmail) values ('asdasdasd')";
-                SqlCommand execCmd = new SqlCommand(sqlCmd, myConn);
-
-                //execCmd.ExecuteScalar();
-                myConn.Close();
-            }
-            catch (Exception e)
-            {
-                _logger.LogError("db connected fail");
-                _logger.LogError(e.ToString());
-            }
+            return Content($"Hello sadas");
         }
     }
 }
