@@ -37,10 +37,10 @@ namespace MyPortfolio.Controllers
             {
                 myConn.Open();
                 _logger.LogError("db has connected");
-                string testCmd = @"use [Visitor] Insert into Visitors(VisitorEmail) values ('phatsngoo2702@gmail.com')";
-                SqlCommand execCmd = new SqlCommand(testCmd, myConn);
+                //string testCmd = @"use [Visitor] Insert into Visitors(VisitorEmail) values ('phatsngoo2702@gmail.com')";
+                //SqlCommand execCmd = new SqlCommand(testCmd, myConn);
 
-                execCmd.ExecuteScalar();
+                //execCmd.ExecuteScalar();
                 myConn.Close();
             }
             catch (Exception e)
