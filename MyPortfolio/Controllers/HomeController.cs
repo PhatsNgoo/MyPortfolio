@@ -76,7 +76,7 @@ namespace MyPortfolio.Controllers
                 _logger.LogError("db connected fail");
                 _logger.LogError(e.ToString());
             }
-            return visitor;
+            return RedirectToAction("Index");
         }
     }
 }
