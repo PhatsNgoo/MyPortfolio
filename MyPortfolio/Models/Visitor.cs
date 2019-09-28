@@ -7,5 +7,6 @@ namespace MyPortfolio.Models
 {
     public class Visitor
     {
+        public string email { get; set; }
     }
 }

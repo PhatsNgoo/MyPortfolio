@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using Microsoft.Extensions.Logging.Debug;
 using Microsoft.Extensions.Logging;
+using MyPortfolio.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -49,21 +50,25 @@ namespace MyPortfolio.Controllers
         {
             // To avoid storing the connection string in your code, 
             // you can retrieve it from a configuration file.
-            return "Data Source=PHATSNGOO-PC;User ID=sa;Password=Uzur3u2w;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            return "Data Source=PHATSNGOO-PC;User ID=sa;Password=Uzur3u2w;";
         }
-        public void SaveVisitorEmail(string email)
+        [HttpPost]
+        public ActionResult<Visitor> SaveVisitorEmail(string email)
         {
+            Visitor visitor = new Visitor();
+            visitor.email = email;
             _logger.LogError("function called");
+            _logger.LogError(email);
             string connString = GetConnectionString();
             SqlConnection myConn = new SqlConnection(connString);
             try
             {
                 _logger.LogError("dsql connecting");
                 myConn.Open();
-                string sqlCmd = @"use [Visitor] Insert into Visitors(VisitorEmail) values ('" + email + "')";
+                string sqlCmd = @"use [Visitor] Insert into Visitors(VisitorEmail) values ('"+email+"')";
                 SqlCommand execCmd = new SqlCommand(sqlCmd, myConn);
 
-                //execCmd.ExecuteScalar();
+                execCmd.ExecuteScalar();
                 myConn.Close();
             }
             catch (Exception e)
@@ -71,27 +76,7 @@ namespace MyPortfolio.Controllers
                 _logger.LogError("db connected fail");
                 _logger.LogError(e.ToString());
             }
-        }
-        public void SaveVisitorEmail()
-        {
-            _logger.LogError("function called");
-            string connString = GetConnectionString();
-            SqlConnection myConn = new SqlConnection(connString);
-            try
-            {
-                _logger.LogError("dsql connecting");
-                myConn.Open();
-                string sqlCmd = @"use [Visitor] Insert into Visitors(VisitorEmail) values ('asdasdasd')";
-                SqlCommand execCmd = new SqlCommand(sqlCmd, myConn);
-
-                //execCmd.ExecuteScalar();
-                myConn.Close();
-            }
-            catch (Exception e)
-            {
-                _logger.LogError("db connected fail");
-                _logger.LogError(e.ToString());
-            }
+            return visitor;
         }
     }
 }
